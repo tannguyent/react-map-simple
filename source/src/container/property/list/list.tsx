@@ -8,17 +8,14 @@ import {
 } from 'react-google-maps';
 
 
-export interface MapProps {
-  makers: [];
+export interface IPropertyProps {
 }
 
-export interface MapState {
-  readonly count: number;
+export interface IPropertyState {
 }
 
-
-class Map extends React.Component<MapProps, MapState> {
-  readonly state: MapState = {
+class Map extends React.Component<IPropertyProps, IPropertyState> {
+  readonly state: IPropertyState = {
     count: 0,
   };
   
