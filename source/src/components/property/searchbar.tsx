@@ -26,7 +26,6 @@ class PropertySearchBar extends React.Component<AllProps>{
   }
 
   submitChange() {
-    debugger
     let minPriceElement = document.getElementById('txtMinPrice') as any;
     let maxPriceElement = document.getElementById('txtMaxPrice') as any;
     if (minPriceElement && maxPriceElement && this.props.updateSearchCondition) {

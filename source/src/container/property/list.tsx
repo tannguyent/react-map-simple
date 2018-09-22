@@ -27,10 +27,14 @@ type AllProps = IPropsFromState & IPropsFromDispatch
 
 class PropertyList extends React.Component<AllProps>{
   public render() {
+    debugger
+    let searchCondition = this.props.searchCondition;
     return (
       <div>
         <PropertySearchBar />
         <div> this is property list</div>
+        <label>{searchCondition.minPrice}</label>
+        <label>{searchCondition.maxPrice}</label>
       </div>
     );
   }
@@ -43,6 +47,7 @@ const mapStateToProps = ({ property }: RootState) => ({
   loading: property.loading,
   errors: property.errors,
   data: property.data,
+  searchCondition: property.searchCondition
 })
 
 // Mapping our action dispatcher to props is especially useful when creating container components.
