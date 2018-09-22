@@ -26,8 +26,11 @@ interface IPropsFromDispatch {
 type AllProps = IPropsFromState & IPropsFromDispatch 
 
 class PropertyList extends React.Component<AllProps>{
+  public componentDidMount(){
+    if(this.props.fetchRequest && this.props.searchCondition)
+      this.props.fetchRequest(this.props.searchCondition);
+  }
   public render() {
-    debugger
     let searchCondition = this.props.searchCondition;
     return (
       <div>

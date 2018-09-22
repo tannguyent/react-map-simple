@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/redux-logger": "^3.0.6",
     "axios": "^0.18.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -17,7 +16,8 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
-    "redux-thunk": "^2.3.0"
+    "redux-saga": "^0.16.0",
+    "typescript": "^2.9.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -29,14 +29,14 @@
     "@types/googlemaps": "^3.30.13",
     "@types/jest": "^23.3.2",
     "@types/markerclustererplus": "^2.1.33",
-    "@types/node": "^10.10.0",
-    "@types/react": "^16.4.14",
+    "@types/node": "^10.10.3",
+    "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.7",
     "@types/react-redux": "^6.0.9",
     "@types/react-router-dom": "^4.3.1",
     "@types/react-router-redux": "^5.0.16",
     "@types/recompose": "^0.26.5",
-    "@types/redux-persist": "^4.3.1",
-    "typescript": "^3.0.3"
+    "@types/redux-logger": "^3.0.6",
+    "@types/redux-persist": "^4.3.1"
   }
 }
