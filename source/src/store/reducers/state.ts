@@ -1,7 +1,10 @@
 import { RouterState } from 'react-router-redux';
-export interface RootState {
+import {IPropertyState} from './modules/property/types'
+export interface IRootState {
   router: RouterState;
 }
 
-export namespace RootState {
+export class RootState implements IRootState {
+  public router: RouterState;
+  public property: IPropertyState;
 }
