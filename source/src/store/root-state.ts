@@ -1,5 +1,5 @@
 import { RouterState } from 'react-router-redux';
-import {IPropertyState} from './modules/property/types'
+import {IPropertyState} from './property/types'
 export interface IRootState {
   router: RouterState;
 }

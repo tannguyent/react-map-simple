@@ -1,8 +1,8 @@
 
 import * as React from 'react';
 import { ISearchCondition, SearchCondition } from "../../models/index"
-import * as propertyActions from "../../store/reducers/modules/property/actions"
-import { RootState } from '../../store/reducers';
+import * as propertyActions from "../../store/property/actions"
+import { RootState } from '../../store/root-reducer';
 import { connect } from 'react-redux'
 
 // Separate state props + dispatch props to their own interfaces.

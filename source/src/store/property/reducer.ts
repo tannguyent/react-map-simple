@@ -1,8 +1,9 @@
 import { Reducer } from 'redux';
 import { IPropertyState } from './types'
-import { SearchCondition } from '../../../../models/index'
+import { SearchCondition } from '../../models/index'
 import { PropertyActionTypes } from './actions'
 // Type-safe initialState!
+
 export const initialState: IPropertyState = {
     searchCondition: new SearchCondition(),
     data: [],
@@ -12,6 +13,12 @@ export const initialState: IPropertyState = {
 
 const reducer: Reducer<IPropertyState> = (state = initialState, action) => {
     switch (action.type) {
+        case PropertyActionTypes.FETCH_MAKERS: {
+            return { ...state, loading: true }
+        }
+        case PropertyActionTypes.FETCH_MAKERS_SUCCESS: {
+            return { ...state, loading: false, data: action.payload }
+        }
         case PropertyActionTypes.FETCH_REQUEST: {
             return { ...state, loading: true }
         }

@@ -1,8 +1,8 @@
 
 import * as React from 'react';
 import { PropertyListModel, ISearchCondition } from "../../models/index"
-import { fetchRequest } from "../../store/reducers/modules/property/actions"
-import { RootState } from '../../store/reducers';
+import { fetchRequest } from "../../store/property/actions"
+import { RootState } from '../../store/root-reducer';
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 

@@ -1,8 +1,8 @@
 
 import { combineReducers } from 'redux';
 import { routerReducer, RouterState } from 'react-router-redux';
-import { RootState } from './state';
-import { propertyReducer } from './modules/property/reducer';
+import { RootState } from './root-state';
+import { propertyReducer } from './property/reducer';
 export { RootState, RouterState };
 
 const rootReducer = combineReducers<RootState>({
