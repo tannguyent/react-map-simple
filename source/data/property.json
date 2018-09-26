@@ -1,0 +1,17 @@
+[
+    {
+        "Id": 1,
+        "Reference": "propery Reference",
+        "Price": 50
+    },
+    {
+        "Id": 2,
+        "Reference": "propery Reference",
+        "Price": 50
+    },
+    {
+        "Id": 3,
+        "Reference": "propery Reference",
+        "Price": 50
+    }
+]

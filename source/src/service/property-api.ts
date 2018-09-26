@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 // endpoint root
-const root = "/Properties";
+const root = "/data/Property.json";
 export default class PropertyAPI {
     static get(condition: any) {
         return axios.get(root);

@@ -1,5 +1,5 @@
 import { takeLatest } from "redux-saga"  
-import { call, put } from "redux-saga/effects"
+import { call, put, all, fork } from "redux-saga/effects"
 import { PropertyActionTypes } from "./actions"
 
 const url = [
@@ -18,8 +18,16 @@ function* fetchRequest() {
    }
 }
 
-function* fetchSaga() {  
+// This is our watcher function. We use `take*()` functions to watch Redux for a specific action
+// type, and run our saga, for example the `handleFetch()` saga above.
+function* watchFetchRequest() {
   yield* takeLatest(PropertyActionTypes.FETCH_REQUEST, fetchRequest);
 }
 
-export default fetchSaga;  
+
+// We can also use `fork()` here to split our saga into multiple watchers.
+function* propertySaga() {
+  yield all([fork(watchFetchRequest)])
+}
+
+export default propertySaga

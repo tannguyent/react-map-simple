@@ -8,24 +8,14 @@ import {
   Marker,
 } from 'react-google-maps';
 import MarkerClusterer  from "react-google-maps/lib/components/addons/MarkerClusterer";
+import { IGoogleMapMaker } from '../../models';
 
-import axios from "axios"
-
-interface IMarker {
-  photo_id: string;
-  latitude: number;
-  longitude: number;
-}
 
 interface IMapProps {
-  markers: IMarker[];
+  markers: IGoogleMapMaker[];
   onMarkerClustererClick(): void;
 }
-
-interface IMapState {
-  markers: IMarker[];
-}
-const MapWithAMarkerClusterer = compose<IMapProps, IMapState>(
+const MapWithAMarkerClusterer = compose<IMapProps, {}>(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCXl67dCOMGCDmSVZsU2Duf4o_VrOWJUxg&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
@@ -52,7 +42,7 @@ const MapWithAMarkerClusterer = compose<IMapProps, IMapState>(
     >
       {props.markers.map(marker => (
         <Marker
-          key={marker.photo_id}
+          key={marker.id}
           position={{ lat: marker.latitude, lng: marker.longitude }}
         />
       ))}
@@ -60,32 +50,5 @@ const MapWithAMarkerClusterer = compose<IMapProps, IMapState>(
   </GoogleMap>
 );
 
-class Map extends React.Component<{}, IMapState> {
-  public componentWillMount() {
-    console.log('componentWillMount')
-    this.setState({ markers: [] })
-  }
 
-  public componentDidMount() {
-    console.log('componentDidMount')
-    const url = [
-      // Length issue
-      `https://gist.githubusercontent.com`,
-      `/farrrr/dfda7dd7fccfec5474d3`,
-      `/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`
-    ].join("")
-
-    axios(url)
-      .then((data: any) => {
-        this.setState({ markers: data.data.photos });
-      });
-  }
-
-  public render() {
-    return (
-      <MapWithAMarkerClusterer markers={this.state.markers} />
-    );
-  }
-}
-
-export default Map;
+export default MapWithAMarkerClusterer;

@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import reducers from './root-reducer';
 // import logger from 'redux-logger';
-import fetchSaga from './property/saga'
+import rootSaga from './root-saga'
 
 const persistConfig = {
     key: 'root',
@@ -13,12 +13,13 @@ const persistConfig = {
 
 const sagaMiddleware = createSagaMiddleware();
 const persistedReducer = persistReducer(persistConfig, reducers)
+
 export default () => {
     const store = createStore(
         persistedReducer,
         applyMiddleware(sagaMiddleware)
     )
     const persistor = persistStore(store)
-    sagaMiddleware.run(fetchSaga);
+    sagaMiddleware.run(rootSaga);
     return { store, persistor }
 }
