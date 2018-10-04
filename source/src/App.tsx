@@ -1,5 +1,5 @@
 
-import Map from "./components/map/map";
+
 
 import * as React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
@@ -8,7 +8,6 @@ import Login from './container/login/login';
 import Register from './container/register/register';
 
 import Property from "./pages/property";
-
 class App extends React.Component {
   public render() {
     return (
@@ -22,7 +21,6 @@ class App extends React.Component {
             </ul>
           </nav>
         </header>
-        <Map />
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

@@ -1,7 +1,5 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
 import { RouteComponentProps, Route, Switch } from 'react-router-dom'
-
 import IndexPage from '../container/property/list'
 
 // Combine both state + dispatch props - as well as any props we want to pass - in a union type.
@@ -21,4 +19,4 @@ class PropertyPage extends React.Component<AllProps> {
 
 // Now let's connect our component!
 // With redux v4's improved typings, we can finally omit generics here.
-export default connect()(PropertyPage)
+export default PropertyPage
