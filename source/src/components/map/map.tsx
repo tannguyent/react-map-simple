@@ -10,12 +10,12 @@ import {
 import MarkerClusterer  from "react-google-maps/lib/components/addons/MarkerClusterer";
 import { IGoogleMapMaker } from '../../models';
 
+
 interface IMapProps {
   markers: IGoogleMapMaker[];
   onMarkerClustererClick(): void;
 }
-
-const MapComponent = compose<IMapProps, {}>(
+const MapWithAMarkerClusterer = compose<IMapProps, {}>(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCXl67dCOMGCDmSVZsU2Duf4o_VrOWJUxg&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
@@ -49,4 +49,6 @@ const MapComponent = compose<IMapProps, {}>(
     </MarkerClusterer>
   </GoogleMap>
 );
-export default MapComponent
+
+
+export default MapWithAMarkerClusterer;
